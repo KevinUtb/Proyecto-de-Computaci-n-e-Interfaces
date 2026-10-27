@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitor de Vitrina</title>
+  <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="#/dashboard">Monitor de Vitrina</a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#/dashboard" data-ruta="dashboard">Dashboard</a>
+      <a href="#/configuracion" data-ruta="configuracion">Configuración</a>
+      <a href="#/historial" data-ruta="historial">Historial</a>
+      <a href="#/alertas" data-ruta="alertas">Alertas <span class="insignia" id="insignia-alertas" hidden></span></a>
+    </nav>
+    <div class="conexion" id="conexion" role="status" aria-live="polite">
+      <span class="punto" id="conexion-punto"></span>
+      <span id="conexion-texto">Conectando...</span>
+    </div>
+  </header>
+
+  <main id="vista" tabindex="-1"></main>
+
+  <div id="avisos" aria-live="polite"></div>
+
+  <dialog id="dialogo" aria-labelledby="dialogo-titulo">
+    <h2 id="dialogo-titulo"></h2>
+    <p id="dialogo-texto"></p>
+    <p id="dialogo-detalle"></p>
+    <div class="botones">
+      <button type="button" class="boton secundario" id="dialogo-cancelar">Cancelar</button>
+      <button type="button" class="boton peligro" id="dialogo-aceptar">Aceptar</button>
+    </div>
+  </dialog>
+
+  <script src="/static/vendor/chart.umd.js"></script>
+  <script type="module" src="/static/js/main.js"></script>
+</body>
+</html>
